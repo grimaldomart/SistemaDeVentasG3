@@ -67,7 +67,8 @@ public final class Sistema extends javax.swing.JFrame {
         txtIdproducto.setVisible(false);
         txtIdProveedor.setVisible(false);
         txtIdConfig.setVisible(false);
-        txtIdCV.setVisible(false);
+        new_cliente.setVisible(false);
+        btn_new_cliente.setVisible(false);
         ListarConfig();
         if (priv.getRol().equals("Asistente")) {
             btnProductos.setEnabled(false);
@@ -192,6 +193,7 @@ public final class Sistema extends javax.swing.JFrame {
         jButton1 = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         jLabel39 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
         jLabel38 = new javax.swing.JLabel();
         jTabbedPane1 = new javax.swing.JTabbedPane();
         jPanel2 = new javax.swing.JPanel();
@@ -215,11 +217,12 @@ public final class Sistema extends javax.swing.JFrame {
         btnGenerarVenta = new javax.swing.JButton();
         jLabel10 = new javax.swing.JLabel();
         LabelTotal = new javax.swing.JLabel();
-        txtIdCV = new javax.swing.JTextField();
         txtIdPro = new javax.swing.JTextField();
         btnGraficar = new javax.swing.JButton();
         Midate = new com.toedter.calendar.JDateChooser();
         jLabel11 = new javax.swing.JLabel();
+        btn_new_cliente = new javax.swing.JButton();
+        new_cliente = new javax.swing.JTextField();
         jPanel3 = new javax.swing.JPanel();
         jScrollPane2 = new javax.swing.JScrollPane();
         TableCliente = new javax.swing.JTable();
@@ -313,10 +316,9 @@ public final class Sistema extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jPanel1.setBackground(new java.awt.Color(69, 8, 206));
+        jPanel1.setBackground(new java.awt.Color(255, 255, 153));
 
-        btnNuevaVenta.setBackground(new java.awt.Color(153, 153, 153));
-        btnNuevaVenta.setForeground(new java.awt.Color(255, 255, 255));
+        btnNuevaVenta.setBackground(new java.awt.Color(0, 255, 204));
         btnNuevaVenta.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/Nventa.png"))); // NOI18N
         btnNuevaVenta.setText("Nueva Venta");
         btnNuevaVenta.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
@@ -327,7 +329,7 @@ public final class Sistema extends javax.swing.JFrame {
             }
         });
 
-        btnClientes.setBackground(new java.awt.Color(153, 153, 153));
+        btnClientes.setBackground(new java.awt.Color(51, 51, 51));
         btnClientes.setForeground(new java.awt.Color(255, 255, 255));
         btnClientes.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/Clientes.png"))); // NOI18N
         btnClientes.setText("Clientes");
@@ -339,7 +341,7 @@ public final class Sistema extends javax.swing.JFrame {
             }
         });
 
-        btnProveedor.setBackground(new java.awt.Color(153, 153, 153));
+        btnProveedor.setBackground(new java.awt.Color(51, 51, 51));
         btnProveedor.setForeground(new java.awt.Color(255, 255, 255));
         btnProveedor.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/proveedor.png"))); // NOI18N
         btnProveedor.setText("Proveedor");
@@ -351,7 +353,7 @@ public final class Sistema extends javax.swing.JFrame {
             }
         });
 
-        btnProductos.setBackground(new java.awt.Color(153, 153, 153));
+        btnProductos.setBackground(new java.awt.Color(51, 51, 51));
         btnProductos.setForeground(new java.awt.Color(255, 255, 255));
         btnProductos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/producto.png"))); // NOI18N
         btnProductos.setText("Productos");
@@ -368,7 +370,7 @@ public final class Sistema extends javax.swing.JFrame {
             }
         });
 
-        btnVentas.setBackground(new java.awt.Color(153, 153, 153));
+        btnVentas.setBackground(new java.awt.Color(51, 51, 51));
         btnVentas.setForeground(new java.awt.Color(255, 255, 255));
         btnVentas.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/compras.png"))); // NOI18N
         btnVentas.setText("Ventas");
@@ -380,7 +382,7 @@ public final class Sistema extends javax.swing.JFrame {
             }
         });
 
-        btnConfig.setBackground(new java.awt.Color(153, 153, 153));
+        btnConfig.setBackground(new java.awt.Color(51, 51, 51));
         btnConfig.setForeground(new java.awt.Color(255, 255, 255));
         btnConfig.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/config.png"))); // NOI18N
         btnConfig.setText("Config");
@@ -392,13 +394,12 @@ public final class Sistema extends javax.swing.JFrame {
             }
         });
 
-        LabelVendedor.setForeground(new java.awt.Color(255, 255, 255));
         LabelVendedor.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         LabelVendedor.setText("Vida Informatico");
 
         tipo.setForeground(new java.awt.Color(255, 255, 255));
 
-        jButton1.setBackground(new java.awt.Color(153, 153, 153));
+        jButton1.setBackground(new java.awt.Color(51, 51, 51));
         jButton1.setForeground(new java.awt.Color(255, 255, 255));
         jButton1.setText("Usuarios");
         jButton1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
@@ -456,18 +457,23 @@ public final class Sistema extends javax.swing.JFrame {
                 .addComponent(btnConfig, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 62, Short.MAX_VALUE))
+                .addGap(0, 0, Short.MAX_VALUE))
         );
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 200, 560));
         getContentPane().add(jLabel39, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 10, 120, -1));
+
+        jLabel2.setFont(new java.awt.Font("Segoe UI", 3, 24)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(0, 204, 204));
+        jLabel2.setText("Sistema de Ventas de Aparatos Electronicos");
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 10, 540, 80));
 
         jLabel38.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/Presentación Diapositivas Propuesta Proyecto para Niños Infantil Juvenil Doodle Colorido Rosa.png"))); // NOI18N
         getContentPane().add(jLabel38, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 0, 870, 130));
 
         jTabbedPane1.setBackground(new java.awt.Color(255, 255, 255));
 
-        jPanel2.setBackground(new java.awt.Color(102, 255, 204));
+        jPanel2.setBackground(new java.awt.Color(0, 102, 255));
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel3.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
@@ -501,6 +507,11 @@ public final class Sistema extends javax.swing.JFrame {
         });
         jPanel2.add(txtCodigoVenta, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 70, 102, 30));
 
+        txtDescripcionVenta.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtDescripcionVentaActionPerformed(evt);
+            }
+        });
         txtDescripcionVenta.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 txtDescripcionVentaKeyTyped(evt);
@@ -559,6 +570,11 @@ public final class Sistema extends javax.swing.JFrame {
         jLabel9.setText("Nombre:");
         jPanel2.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(146, 352, -1, -1));
 
+        txtRucVenta.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtRucVentaActionPerformed(evt);
+            }
+        });
         txtRucVenta.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
                 txtRucVentaKeyPressed(evt);
@@ -586,7 +602,6 @@ public final class Sistema extends javax.swing.JFrame {
 
         LabelTotal.setText("-----");
         jPanel2.add(LabelTotal, new org.netbeans.lib.awtextra.AbsoluteConstraints(756, 381, -1, -1));
-        jPanel2.add(txtIdCV, new org.netbeans.lib.awtextra.AbsoluteConstraints(327, 375, -1, -1));
         jPanel2.add(txtIdPro, new org.netbeans.lib.awtextra.AbsoluteConstraints(678, 126, -1, -1));
 
         btnGraficar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/torta.png"))); // NOI18N
@@ -595,11 +610,19 @@ public final class Sistema extends javax.swing.JFrame {
                 btnGraficarActionPerformed(evt);
             }
         });
-        jPanel2.add(btnGraficar, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 60, -1, -1));
-        jPanel2.add(Midate, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 70, 210, 30));
+        jPanel2.add(btnGraficar, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 60, -1, -1));
+        jPanel2.add(Midate, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 70, 210, 30));
 
         jLabel11.setText("Seleccionar:");
-        jPanel2.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 50, -1, -1));
+        jPanel2.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 50, -1, -1));
+
+        btn_new_cliente.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_new_clienteActionPerformed(evt);
+            }
+        });
+        jPanel2.add(btn_new_cliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 380, -1, 20));
+        jPanel2.add(new_cliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 350, -1, -1));
 
         jTabbedPane1.addTab("1", jPanel2);
 
@@ -1733,10 +1756,12 @@ public final class Sistema extends javax.swing.JFrame {
                 cl = client.Buscarcliente(dni);
                 if (cl.getNombre() != null) {
                     txtNombreClienteventa.setText("" + cl.getNombre());
-                    txtIdCV.setText("" + cl.getId());
+                    new_cliente.setText("" + cl.getId());
                 } else {
                     txtRucVenta.setText("");
                     JOptionPane.showMessageDialog(null, "El cliente no existe");
+                    btn_new_cliente.setVisible(true);
+                    txtNombreClienteventa.setEditable(true);
                 }
             }
         }
@@ -1834,6 +1859,32 @@ public final class Sistema extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_txtCodigoVentaKeyPressed
 
+    private void txtDescripcionVentaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtDescripcionVentaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtDescripcionVentaActionPerformed
+
+    private void txtRucVentaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtRucVentaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtRucVentaActionPerformed
+
+    private void btn_new_clienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_new_clienteActionPerformed
+        // TODO add your handling code here:
+        if (!"".equals(txtRucVenta.getText()) || !"".equals(txtNombreClienteventa.getText())) {
+            cl.setDni(txtRucVenta.getText());
+            cl.setNombre(txtNombreClienteventa.getText());
+            cl.setTelefono("");
+            cl.setDireccion("");
+            client.RegistrarCliente(cl);
+            JOptionPane.showMessageDialog(null, "Cliente Registrado");
+            LimpiarTable();
+            LimpiarCliente();
+            ListarCliente();
+            btn_new_cliente.setEnabled(false);
+        } else {
+            JOptionPane.showMessageDialog(null, "Los campos estan vacios");
+        }
+    }//GEN-LAST:event_btn_new_clienteActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -1902,6 +1953,7 @@ public final class Sistema extends javax.swing.JFrame {
     private javax.swing.JButton btnProductos;
     private javax.swing.JButton btnProveedor;
     private javax.swing.JButton btnVentas;
+    public javax.swing.JButton btn_new_cliente;
     private javax.swing.JButton btnguardarProveedor;
     private javax.swing.JComboBox<Object> cbxProveedorPro;
     private javax.swing.JComboBox<String> cbxRol;
@@ -1917,6 +1969,7 @@ public final class Sistema extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel19;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel20;
     private javax.swing.JLabel jLabel21;
     private javax.swing.JLabel jLabel22;
@@ -1964,6 +2017,7 @@ public final class Sistema extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane5;
     private javax.swing.JScrollPane jScrollPane6;
     private javax.swing.JTabbedPane jTabbedPane1;
+    public javax.swing.JTextField new_cliente;
     private javax.swing.JLabel tipo;
     private javax.swing.JTextField txtCantPro;
     private javax.swing.JTextField txtCantidadVenta;
@@ -1976,7 +2030,6 @@ public final class Sistema extends javax.swing.JFrame {
     private javax.swing.JTextField txtDireccionProveedor;
     private javax.swing.JTextField txtDirecionCliente;
     private javax.swing.JTextField txtDniCliente;
-    private javax.swing.JTextField txtIdCV;
     private javax.swing.JTextField txtIdCliente;
     private javax.swing.JTextField txtIdConfig;
     private javax.swing.JTextField txtIdPro;
@@ -2045,7 +2098,7 @@ public final class Sistema extends javax.swing.JFrame {
     }
 
     private void RegistrarVenta() {
-        int cliente = Integer.parseInt(txtIdCV.getText());
+        int cliente = Integer.parseInt(new_cliente.getText());
         String vendedor = LabelVendedor.getText();
         double monto = Totalpagar;
         v.setCliente(cliente);
@@ -2068,7 +2121,7 @@ public final class Sistema extends javax.swing.JFrame {
             Vdao.RegistrarDetalle(Dv);
 
         }
-        int cliente = Integer.parseInt(txtIdCV.getText());
+        int cliente = Integer.parseInt(new_cliente.getText());
         Vdao.pdfV(id, cliente, Totalpagar, LabelVendedor.getText());
     }
 
@@ -2094,7 +2147,7 @@ public final class Sistema extends javax.swing.JFrame {
     private void LimpiarClienteventa() {
         txtRucVenta.setText("");
         txtNombreClienteventa.setText("");
-        txtIdCV.setText("");
+        new_cliente.setText("");
     }
     private void nuevoUsuario(){
         txtNombre.setText("");
